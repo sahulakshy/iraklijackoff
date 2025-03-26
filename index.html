@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irakli's Desktop</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font - Using VT323 for pixel feel, Open Sans as fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="desktop">
+        <!-- Desktop Icons -->
+        <div class="icon" id="icon-about">
+            <img src="icons/my_computer.png" alt="My Computer">
+            <span>About Irakli</span>
+        </div>
+
+        <div class="icon" id="icon-projects">
+            <img src="icons/my_documents.png" alt="My Documents">
+            <span>Irakli's Projects</span>
+        </div>
+
+        <div class="icon" id="icon-contact">
+            <img src="icons/network_neighborhood.png" alt="Network">
+            <span>Connect (No need to *wine*)</span>
+        </div>
+
+        <div class="icon" id="icon-georgia">
+            <img src="icons/georgia_flag.png" alt="Georgian Flag">
+            <span>Georgia Info</span>
+        </div>
+
+        <!-- Windows (Initially Hidden) -->
+        <div class="window" id="window-about">
+            <div class="title-bar">
+                <span class="title">About Irakli - He's Georgia-ous!</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <h2>Greetings from the Digital Caucasus!</h2>
+                <p>Welcome to Irakli's corner of the web. Hailing from the beautiful country of Georgia (საქართველო), he's not just dealing with bytes, but also knows a thing or two about Khachapuri!</p>
+                <p>Skills include:</p>
+                <ul>
+                    <li>Turning coffee into code (Supra-charged!)</li>
+                    <li>Debugging (without *wine*-ing too much)</li>
+                    <li>Making websites more fun than a Tamada at a feast.</li>
+                    <li>Existing.</li>
+                </ul>
+                 <img src="icons/clippy.png" alt="Clippy" style="width: 50px; float: right; margin: 10px;" title="Looks like you're building a website! Need help?">
+                 <p>He believes in good code and good company. Explore the desktop to learn more!</p>
+            </div>
+        </div>
+
+        <div class="window" id="window-projects">
+            <div class="title-bar">
+                <span class="title">Irakli's Projects - What's Cookin'?</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <h2>Project Showcase</h2>
+                <p>Here are some things Irakli has been working on. No *churchkhela*-ing results here, only solid work!</p>
+                <ul>
+                    <li><strong>Project A:</strong> A revolutionary app that translates toasts into code comments. (Under Development)</li>
+                    <li><strong>Project B:</strong> A website analyzing the structural integrity of Khachapuri Adjaruli. (Completed)</li>
+                    <li><strong>Project C:</strong> This very website! (Meta, right?)</li>
+                    <!-- Add more real or fictional projects -->
+                </ul>
+                <p>More projects coming soon... stay tuned!</p>
+                 <div class="loading-bar-container">
+                     <div class="loading-bar"></div>
+                     <span>Loading more awesome ideas...</span>
+                 </div>
+            </div>
+        </div>
+
+        <div class="window" id="window-contact">
+            <div class="title-bar">
+                <span class="title">Connect - Let's Qvevri-cate!</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <h2>Get In Touch!</h2>
+                <p>Want to collaborate, chat about Georgia, or debate the best type of Khinkali? Don't be shy!</p>
+                <p>You can find Irakli on:</p>
+                <ul>
+                    <li><strong>LinkedIn:</strong> <a href="#" target="_blank">[Link Here]</a> (Professional Shenanigans)</li>
+                    <li><strong>GitHub:</strong> <a href="#" target="_blank">[Link Here]</a> (Where the code magic happens)</li>
+                    <li><strong>Email:</strong> <a href="mailto:">irakli@example.com</a> (Replace with actual email)</li>
+                </ul>
+                <p>Reach out, let's make something *supra* special!</p>
+                 <img src="icons/mail.png" alt="Mail icon" style="width:64px; margin-top: 15px;">
+            </div>
+        </div>
+
+         <div class="window" id="window-georgia">
+            <div class="title-bar">
+                <span class="title">Georgia - More Than Just Peachy!</span>
+                <button class="close-button">X</button>
+            </div>
+            <div class="window-content">
+                <h2>Welcome to საქართველო (Sakartvelo)!</h2>
+                <img src="icons/georgia_map.png" alt="Map of Georgia" style="width: 150px; float:right; margin-left:10px;">
+                <p>Not the US state! This Georgia is a country at the intersection of Europe and Asia, home to Caucasus mountain villages and Black Sea beaches.</p>
+                <p><strong>Fast Facts:</strong></p>
+                <ul>
+                    <li><strong>Capital:</strong> Tbilisi</li>
+                    <li><strong>Known for:</strong> Cradle of wine (8000+ years!), stunning nature, incredible hospitality, unique alphabet (ანბანი).</li>
+                    <li><strong>Must Try:</strong> Khachapuri (cheese bread), Khinkali (dumplings), Mtsvadi (BBQ), Churchkhela (nutty candy).</li>
+                </ul>
+                <p>Basically, it's amazing. You should visit! Just be prepared for a *supra* (feast) or two.</p>
+            </div>
+        </div>
+
+
+    </div> <!-- End Desktop -->
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <button id="start-button">
+            <img src="icons/start_icon.png" alt="Start">
+            <span>Start</span>
+        </button>
+        <div id="taskbar-divider"></div>
+        <!-- Active window tabs will go here via JS -->
+        <div id="taskbar-clock">00:00:00</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
