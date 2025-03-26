@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif; /* Default modern font */
+  background-color: #008080; /* Classic teal background */
+  overflow: hidden; /* Prevent scrollbars on the body */
+  user-select: none; /* Prevent text selection on desktop */
+}
+
+#desktop {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 30px); /* Full height minus taskbar */
+  overflow: hidden;
+}
+
+/* --- Icons --- */
+.icon {
+  position: absolute; /* Allows placing anywhere */
+  width: 80px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px; /* Small icon text */
+  font-family: 'VT323', monospace; /* Pixel font for icons */
+  border: 1px solid transparent; /* For selection effect */
+}
+
+.icon:hover {
+  background-color: rgba(0, 0, 128, 0.3); /* Blue highlight */
+  border: 1px dotted rgba(255, 255, 255, 0.7);
+}
+
+.icon.selected { /* Style when clicked */
+   background-color: rgba(0, 0, 128, 0.6);
+   border: 1px dotted white;
+}
+
+
+.icon img {
+  width: 48px; /* Icon size */
+  height: 48px;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
+/* Positioning Icons (Example - adjust as needed) */
+#icon-about { top: 20px; left: 20px; }
+#icon-projects { top: 120px; left: 20px; }
+#icon-contact { top: 220px; left: 20px; }
+#icon-georgia { top: 320px; left: 20px; }
+
+
+/* --- Windows --- */
+.window {
+  position: absolute;
+  width: 450px;
+  height: 300px;
+  background-color: #c0c0c0; /* Classic grey */
+  border: 2px outset white;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  display: none; /* Hidden by default */
+  resize: both; /* Allow resizing (basic) */
+  overflow: auto; /* Scroll if content overflows */
+  min-width: 200px; /* Prevent shrinking too much */
+  min-height: 150px;
+  font-family: 'Open Sans', sans-serif; /* Reset font for window content */
+  font-size: 14px;
+}
+
+.window.active { /* Bring active window to front */
+  z-index: 100;
+}
+
+.title-bar {
+  background-color: #000080; /* Dark blue */
+  color: white;
+  padding: 3px 5px;
+  font-weight: bold;
+  font-size: 13px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab; /* Indicate draggable */
+}
+.title-bar:active {
+  cursor: grabbing;
+}
+
+.title-bar .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.close-button {
+  background-color: #c0c0c0;
+  color: black;
+  border: 1px outset white;
+  font-family: 'Arial Black', Gadget, sans-serif; /* Chunky X */
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  line-height: 12px; /* Center the X */
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  font-size: 10px;
+}
+.close-button:active {
+  border-style: inset;
+}
+
+.window-content {
+  padding: 15px;
+  background-color: #fff; /* White content area */
+  margin: 3px; /* Inner border effect */
+  height: calc(100% - 20px - 6px - 30px); /* Adjust for title bar, margin, padding */
+  overflow-y: auto; /* Scroll content vertically */
+  border: 1px inset #7f7f7f;
+}
+
+.window-content h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: #000080;
+}
+.window-content ul {
+  list-style-type: square; /* Retro list style */
+}
+.window-content a {
+  color: #0000FF;
+  text-decoration: underline;
+}
+.window-content a:hover {
+  color: #FF00FF;
+}
+
+/* Simple fake loading bar */
+.loading-bar-container {
+  border: 1px inset #7f7f7f;
+  padding: 2px;
+  margin-top: 15px;
+  background-color: #c0c0c0;
+}
+.loading-bar {
+  width: 70%; /* Example width */
+  height: 15px;
+  background: linear-gradient(to right, #000080, #0000FF); /* Blue gradient */
+}
+.loading-bar-container span {
+  font-size: 10px;
+  display: block;
+  text-align: center;
+}
+
+/* --- Taskbar --- */
+#taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #c0c0c0; /* Classic grey */
+  border-top: 2px outset white;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+  z-index: 1000; /* Always on top */
+  font-size: 12px;
+}
+
+#start-button {
+  background-color: #c0c0c0;
+  border: 1px outset white;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+#start-button:active {
+  border-style: inset;
+}
+#start-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+#taskbar-divider {
+  height: 26px;
+  width: 2px;
+  background-color: #c0c0c0;
+  border-left: 1px solid #7f7f7f;
+  border-right: 1px solid white;
+  margin: 0 5px;
+}
+
+#taskbar-clock {
+  margin-left: auto; /* Pushes clock to the right */
+  border: 1px inset #7f7f7f;
+  padding: 3px 8px;
+  background-color: #c0c0c0;
+}
